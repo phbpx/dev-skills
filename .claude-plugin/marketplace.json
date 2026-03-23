@@ -1,0 +1,32 @@
+{
+  "name": "phbpx",
+  "owner": {
+    "name": "phbpx"
+  },
+  "metadata": {
+    "description": "Personal dev skills for Claude Code — Go, Python, and TypeScript/Next.js",
+    "homepage": "https://github.com/phbpx/dev-skills"
+  },
+  "plugins": [
+    {
+      "name": "dev-skills",
+      "version": "1.0.0",
+      "source": "./",
+      "description": "A curated set of development skills for personal projects in Go, Python, and TypeScript/Next.js. Covers the full dev cycle: brainstorming, planning, TDD, debugging, code review, and committing.",
+      "homepage": "https://github.com/phbpx/dev-skills",
+      "repository": "https://github.com/phbpx/dev-skills",
+      "license": "MIT",
+      "keywords": ["go", "python", "typescript", "nextjs", "tdd", "debugging", "planning", "git", "code-review"],
+      "skills": [
+        "./dev-brainstorm",
+        "./dev-commit",
+        "./dev-debug",
+        "./dev-do",
+        "./dev-explore",
+        "./dev-plan",
+        "./dev-review",
+        "./dev-tdd"
+      ]
+    }
+  ]
+}

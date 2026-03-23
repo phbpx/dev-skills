@@ -1,0 +1,11 @@
+{
+  "name": "dev-skills",
+  "version": "1.0.0",
+  "description": "A curated set of development skills for personal projects in Go, Python, and TypeScript/Next.js. Covers the full dev cycle: brainstorming, planning, TDD, debugging, code review, and committing.",
+  "author": {
+    "name": "phbpx"
+  },
+  "repository": "https://github.com/phbpx/dev-skills",
+  "license": "MIT",
+  "keywords": ["go", "python", "typescript", "nextjs", "tdd", "debugging", "planning", "git", "code-review"]
+}
