@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "dev-skills",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "source": "./",
       "description": "A curated set of development skills for personal projects in Go, Python, and TypeScript/Next.js. Covers the full dev cycle: brainstorming, planning, TDD, debugging, code review, and committing.",
       "homepage": "https://github.com/phbpx/dev-skills",
@@ -25,7 +25,8 @@
         "./dev-explore",
         "./dev-plan",
         "./dev-review",
-        "./dev-tdd"
+        "./dev-tdd",
+        "./dev-plan-issue"
       ]
     }
   ]
