@@ -13,6 +13,7 @@ Designed for:
 |---|---|
 | `dev-brainstorm` | Validate ideas and design solutions before writing any code |
 | `dev-plan` | Write a detailed implementation plan saved to `docs/plans/` |
+| `dev-plan-issue` | Read a GitHub issue and produce an implementation plan from it |
 | `dev-do` | Execute an approved plan task by task with test validation |
 | `dev-tdd` | Implement features using RED-GREEN-REFACTOR discipline |
 | `dev-debug` | Investigate bugs by finding root causes first |
@@ -35,6 +36,11 @@ Designed for:
 **Starting in unfamiliar code:**
 ```
 /dev-explore → /dev-plan → /dev-do
+```
+
+**A partir de uma issue do GitHub:**
+```
+/dev-plan-issue 42 → /dev-do → /dev-review → /dev-commit
 ```
 
 **Quick implementation (small change):**
