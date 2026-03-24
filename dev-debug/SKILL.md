@@ -63,27 +63,17 @@ Rules:
 
 ### Phase 5 — Verify
 - The originally failing test now passes
-- All existing tests still pass (`go test ./...` / `pytest` / `vitest run`)
+- All existing tests still pass (run the project's full test suite)
 - No new warnings introduced
 
 Document the root cause in the commit message body (one sentence is enough).
 
-## Language-specific notes
+## Language-specific debugging
 
-**Go:**
-- Use `-race` flag to detect data races: `go test -race ./...`
-- Check error returns — common bug source is ignoring `err`
-- Use `t.Log` inside tests, not `fmt.Println`
-
-**Python:**
-- Use `pytest -xvs` for verbose output on first failure
-- Use `pdb` or `breakpoint()` for interactive debugging
-- Check for mutable default arguments (`def f(x=[])`) — classic bug source
-
-**TypeScript/Next.js:**
-- Check `undefined` vs `null` — TypeScript types can lie at runtime (external data)
-- Use React DevTools for component state inspection
-- For async bugs: check `await` is not missing, check Promise rejection handling
+Detect the project's language and apply its idiomatic debugging tools and techniques:
+- Use the language's standard test runner with verbose/fail-fast flags
+- Use the language's interactive debugger when tracing execution
+- Check for the language's common bug patterns (null handling, error propagation, concurrency issues, type coercion, mutable state, etc.)
 
 ## Anti-patterns to refuse
 

@@ -1,11 +1,6 @@
 # dev-skills
 
-A curated set of Claude Code skills for personal software development projects.
-
-Designed for:
-- **Go** — backend services and CLI tools
-- **Python** — data analysis and scripting
-- **TypeScript / Next.js** — frontend applications
+A curated set of language-agnostic Claude Code skills for software development projects. Each skill detects the project's language and stack automatically and applies idiomatic practices.
 
 ## Skills
 
@@ -38,7 +33,7 @@ Designed for:
 /dev-explore → /dev-plan → /dev-do
 ```
 
-**A partir de uma issue do GitHub:**
+**From a GitHub issue:**
 ```
 /dev-plan-issue 42 → /dev-do → /dev-review → /dev-commit
 ```

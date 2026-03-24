@@ -44,15 +44,12 @@ Status: draft
 ## Tasks
 
 ### Task 1 — [Title]
-**Files:** `internal/foo/bar.go`
+**Files:** `path/to/file`
 **Agent:** (optional — leave blank if simple)
 **Description:** [What to implement]
 **Example:**
-\`\`\`go
-// Add this method to FooService
-func (s *FooService) Bar(ctx context.Context, id string) (*Result, error) {
-    ...
-}
+\`\`\`
+// concrete code example using real types from the codebase
 \`\`\`
 **Done when:** [specific, testable criterion]
 

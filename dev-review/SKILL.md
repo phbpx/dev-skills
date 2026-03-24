@@ -1,6 +1,6 @@
 ---
 name: dev-review
-description: Runs a structured 4-perspective code review (code quality, business logic, security, test coverage) using parallel agents. Adapted for Go, Python, and TypeScript/Next.js idioms. Use when the user says "review this", "code review", "check my code", "review the diff", "look at my changes", or wants feedback before merging or committing. Do NOT use for exploring unfamiliar code — use dev-explore instead.
+description: Runs a structured 4-perspective code review (code quality, business logic, security, test coverage) using parallel agents. Applies idiomatic checks for the project's language. Use when the user says "review this", "code review", "check my code", "review the diff", "look at my changes", or wants feedback before merging or committing. Do NOT use for exploring unfamiliar code — use dev-explore instead.
 metadata:
   author: phbpx
   version: 1.0.0
@@ -25,29 +25,14 @@ Dispatch 4 sub-agents simultaneously, each focused on one dimension:
 ---
 
 ### Reviewer 1 — Code Quality
-Evaluate correctness and language idioms.
+Evaluate correctness and language idioms. Detect the project's language and apply its idiomatic standards:
 
-**Go:**
-- Exported types/functions have doc comments
-- Errors are wrapped with context (`fmt.Errorf("...: %w", err)`) and not swallowed
-- No `panic` in library code
-- Interfaces defined at the point of use (consumer), not the provider
-- No unnecessary pointer indirection
-- `defer` used correctly (not in loops for resource-heavy operations)
-
-**Python:**
-- Type annotations on function signatures
-- No mutable default arguments
-- Context managers (`with`) for file/resource handling
-- List comprehensions preferred over map/filter for readability
-- `pathlib` over `os.path` for file operations
-
-**TypeScript/Next.js:**
-- No `any` — use `unknown` and narrow, or define proper types
-- React components: props typed with interfaces, not inline objects
-- `useEffect` dependencies array complete and correct
-- Server vs. client component boundary is intentional (`"use client"` only when needed)
-- No direct DOM manipulation when React state suffices
+- Public APIs have proper documentation (doc comments, docstrings, JSDoc, etc.)
+- Errors are handled explicitly — not swallowed, not ignored, wrapped with context where idiomatic
+- Type safety is used to its full extent (type annotations, generics, narrowing — whatever the language offers)
+- Resource management follows language conventions (defer, context managers, try-with-resources, RAII, etc.)
+- Code follows the project's established patterns and the language's community conventions
+- No unnecessary complexity or abstraction beyond what the language idioms require
 
 ---
 

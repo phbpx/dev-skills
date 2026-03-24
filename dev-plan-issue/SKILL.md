@@ -81,11 +81,11 @@ Issue: <owner/repo>#<number>
 ## Tasks
 
 ### Task 1 — [Title]
-**Files:** `path/to/file.go`
+**Files:** `path/to/file`
 **Description:** [What to implement]
 **Example:**
-```go
-// concrete example using real types from the codebase
+```
+// concrete code example using real types from the codebase
 ```
 **Done when:** [specific, testable criterion that maps to an AC]
 

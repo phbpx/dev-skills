@@ -1,6 +1,6 @@
 ---
 name: dev-tdd
-description: Implements features or fixes using strict RED-GREEN-REFACTOR Test-Driven Development. Supports Go (testify), Python (pytest, hypothesis), and TypeScript/Next.js (vitest, testing-library). Use when the user says "use TDD", "write tests first", "implement with tests", "TDD this", or is starting a new feature or behavior. Do NOT use for bug investigation — use dev-debug instead.
+description: Implements features or fixes using strict RED-GREEN-REFACTOR Test-Driven Development. Detects the project's language and applies idiomatic testing practices. Use when the user says "use TDD", "write tests first", "implement with tests", "TDD this", or is starting a new feature or behavior. Do NOT use for bug investigation — use dev-debug instead.
 metadata:
   author: phbpx
   version: 1.0.0
@@ -56,72 +56,23 @@ Add the next test for the next behavior. Work incrementally.
 
 ---
 
-## Language-specific patterns
+## Language and tooling detection
 
-### Go
+Before writing any test, identify the project's language and test stack by inspecting configuration files (`go.mod`, `pyproject.toml`, `package.json`, `Cargo.toml`, `build.gradle`, `pom.xml`, `*.csproj`, `mix.exs`, `Gemfile`, etc.) and existing test files.
 
-```go
-// File: internal/portfolio/engine_test.go
-func TestBuildPortfolio_WithBuyTransaction_AccumulatesPosition(t *testing.T) {
-    transactions := []Transaction{
-        {Type: Buy, Ticker: "PETR4", Qty: 100, Price: 30.0},
-    }
-    portfolio, err := Build(transactions, mockPriceSource)
-    require.NoError(t, err)
-    assert.Equal(t, 100.0, portfolio.Positions["PETR4"].Quantity)
-}
-```
+Then apply the **idiomatic testing practices** for that stack:
+- Use the project's established test framework and assertion library
+- Follow the project's existing test file organization and naming patterns
+- Use the language's standard test runner and flags
+- Prefer the project's existing test helpers and fixtures over creating new ones
 
-- Use `testing` stdlib + `testify/assert` and `testify/require`
-- Use subtests with `t.Run` for table-driven tests
-- Use `t.Helper()` in assertion helpers
-- Run: `go test -run TestFunctionName ./internal/package/`
-- Run with race detector: `go test -race ./...`
-
-### Python
-
-```python
-# File: tests/test_portfolio.py
-def test_build_portfolio_with_buy_transaction_accumulates_position():
-    transactions = [Transaction(type="buy", ticker="PETR4", qty=100, price=30.0)]
-    portfolio = build_portfolio(transactions, price_source=mock_price_source)
-    assert portfolio.positions["PETR4"].quantity == 100
-```
-
-- Use `pytest`; run single test: `pytest tests/test_file.py::test_function_name -xvs`
-- Use fixtures for shared setup (`@pytest.fixture`)
-- Use `pytest.raises` for exception testing
-- Use `hypothesis` for property-based tests when dealing with numeric calculations
-
-### TypeScript / Next.js
-
-```typescript
-// File: __tests__/components/PortfolioSummary.test.tsx
-import { render, screen } from '@testing-library/react'
-import { PortfolioSummary } from '@/components/PortfolioSummary'
-
-test('shows total value when positions are loaded', () => {
-  render(<PortfolioSummary positions={mockPositions} />)
-  expect(screen.getByText('R$ 10.000,00')).toBeInTheDocument()
-})
-```
-
-- Use `vitest` (preferred) or `jest` + `@testing-library/react`
-- Test behavior via rendered output and user interactions, not component internals
-- `screen.getByRole` over `getByTestId` — test what the user sees
-- For hooks: use `renderHook` from `@testing-library/react`
-- Run single test: `vitest run path/to/test.ts`
+If no tests exist yet, choose the most common test framework for the detected language and follow community conventions.
 
 ---
 
 ## Test naming convention
 
-`Test<Subject>_<Condition>_<ExpectedOutcome>`
-
-Examples:
-- `TestBuild_WithNoTransactions_ReturnsEmptyPortfolio`
-- `test_calculate_return_when_no_transactions_returns_zero`
-- `renders error message when fetch fails`
+Use the project's existing naming convention. If none exists, follow the language's community standard. The name must describe **subject**, **condition**, and **expected outcome**.
 
 ---
 
