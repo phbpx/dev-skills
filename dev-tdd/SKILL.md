@@ -125,6 +125,10 @@ Examples:
 
 ---
 
+## Code documentation
+
+All method and function documentation (comments, docstrings) must be written in **English** — regardless of the project's spoken language.
+
 ## Anti-patterns to refuse
 
 - Writing production code before the test

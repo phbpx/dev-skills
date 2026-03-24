@@ -70,6 +70,7 @@ After all tasks are done:
 
 ## Rules
 
+- All method and function documentation (comments, docstrings) must be written in **English** — regardless of the project's spoken language
 - Never skip a task without flagging it to the user
 - If a task reveals a problem with the plan, pause and discuss — don't improvise a redesign
 - If tests fail after a task, fix before continuing (no "I'll fix it at the end")

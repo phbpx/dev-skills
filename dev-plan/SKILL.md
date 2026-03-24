@@ -82,6 +82,7 @@ Present the plan to the user. Ask:
 
 ## Plan quality rules
 
+- All method and function documentation (comments, docstrings) in code examples must be written in **English**
 - Every task must have a "done when" criterion — no vague tasks
 - Code examples must be concrete (real types, real function names from the codebase)
 - If a task depends on another, state it explicitly: "Requires Task 2 to be complete"

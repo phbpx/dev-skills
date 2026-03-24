@@ -116,6 +116,7 @@ Once approved, suggest running `/dev-do docs/plans/...` to execute.
 
 ## Important
 
+- All method and function documentation (comments, docstrings) in code examples must be written in **English**
 - Every acceptance criterion from the issue must map to at least one task
 - Every task must have a "done when" criterion
 - If the issue has no clear acceptance criteria, derive them from the description and flag them as inferred
