@@ -14,18 +14,19 @@ A curated set of language-agnostic Claude Code skills for software development p
 | `dev-debug` | Investigate bugs by finding root causes first |
 | `dev-review` | Run a 4-perspective code review in parallel |
 | `dev-commit` | Organize changes into clean, atomic Conventional Commits |
+| `dev-pr` | Create a GitHub pull request with auto-generated title and description |
 | `dev-explore` | Understand an unfamiliar codebase through parallel exploration |
 
 ## Typical workflows
 
 **New feature:**
 ```
-/dev-brainstorm → /dev-plan → /dev-do → /dev-review → /dev-commit
+/dev-brainstorm → /dev-plan → /dev-do → /dev-review → /dev-commit → /dev-pr
 ```
 
 **Bug fix:**
 ```
-/dev-debug → /dev-commit
+/dev-debug → /dev-review → /dev-commit → /dev-pr
 ```
 
 **Starting in unfamiliar code:**
@@ -35,12 +36,12 @@ A curated set of language-agnostic Claude Code skills for software development p
 
 **From a GitHub issue:**
 ```
-/dev-plan-issue 42 → /dev-do → /dev-review → /dev-commit
+/dev-plan-issue 42 → /dev-do → /dev-review → /dev-commit → /dev-pr
 ```
 
 **Quick implementation (small change):**
 ```
-/dev-tdd → /dev-commit
+/dev-tdd → /dev-review → /dev-commit → /dev-pr
 ```
 
 ## Installation

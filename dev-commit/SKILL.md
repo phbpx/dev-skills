@@ -79,6 +79,9 @@ Run `git log --oneline -<n>` where n = number of commits made. Confirm all commi
 | `chore` | Tooling, deps, config, CI |
 | `perf` | Performance improvement |
 
+### Step 7 — Next step
+If on a feature branch (not `main`/`master`), suggest `/dev-pr` to open a pull request.
+
 ## Anti-patterns to refuse
 
 - "Just one big commit, it's a small project" → atomic commits pay off during debugging

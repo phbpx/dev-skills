@@ -66,7 +66,7 @@ After each task, verify the "done when" criterion from the plan:
 After all tasks are done:
 1. Run the full test suite one final time
 2. Update the plan status to `completed`
-3. Suggest next steps: `/dev-review`, `/dev-commit`, or follow-up work
+3. Suggest next steps: `/dev-review`, `/dev-commit`, `/dev-pr`, or follow-up work
 
 ## Rules
 

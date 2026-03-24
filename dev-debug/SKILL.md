@@ -68,6 +68,11 @@ Rules:
 
 Document the root cause in the commit message body (one sentence is enough).
 
+### Phase 6 — Next step
+Suggest the appropriate next step:
+- `/dev-review` before committing (recommended — bug fixes can introduce regressions)
+- `/dev-commit` if the fix is trivial and self-evident
+
 ## Language-specific debugging
 
 Detect the project's language and apply its idiomatic debugging tools and techniques:

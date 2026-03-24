@@ -80,6 +80,10 @@ Use the project's existing naming convention. If none exists, follow the languag
 
 All method and function documentation (comments, docstrings) must be written in **English** — regardless of the project's spoken language.
 
+## Next step
+When all cycles are complete, suggest:
+- `/dev-review` to validate the implementation, then `/dev-commit`
+
 ## Anti-patterns to refuse
 
 - Writing production code before the test
