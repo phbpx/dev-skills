@@ -7,9 +7,9 @@ A curated set of language-agnostic Claude Code skills for software development p
 | Skill | Description |
 |---|---|
 | `dev-brainstorm` | Validate ideas and design solutions before writing any code |
-| `dev-plan` | Write a detailed implementation plan saved to `docs/plans/` |
+| `dev-plan` | Write a detailed implementation plan saved to `docs/plans/`, with task complexity tags and model recommendations |
 | `dev-plan-issue` | Read a GitHub issue and produce an implementation plan from it |
-| `dev-do` | Execute an approved plan task by task with test validation |
+| `dev-do` | Execute an approved plan task by task with test validation and per-task model routing |
 | `dev-tdd` | Implement features using RED-GREEN-REFACTOR discipline |
 | `dev-debug` | Investigate bugs by finding root causes first |
 | `dev-review` | Run a 4-perspective code review in parallel |
@@ -43,6 +43,12 @@ A curated set of language-agnostic Claude Code skills for software development p
 ```
 /dev-tdd → /dev-review → /dev-commit → /dev-pr
 ```
+
+## Task-aware model routing
+
+`dev-plan` can annotate plans with a default `Model:` plus per-task `[model: ...]` overrides. `dev-do` reads those annotations automatically during execution, while remaining backward compatible with older plans that do not define a model.
+
+See [docs/model-routing.md](docs/model-routing.md).
 
 ## Installation
 
