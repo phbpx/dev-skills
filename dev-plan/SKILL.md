@@ -34,6 +34,7 @@ Save to `docs/plans/YYYY-MM-DD-<feature>.md`:
 # [Feature Title]
 Date: YYYY-MM-DD
 Status: draft
+Model: [default model — see Step 3b]
 
 ## Goal
 [One paragraph: what this implements and why]
@@ -43,7 +44,7 @@ Status: draft
 
 ## Tasks
 
-### Task 1 — [Title]
+### Task 1 — [Title] [small]
 **Files:** `path/to/file`
 **Agent:** (optional — leave blank if simple)
 **Description:** [What to implement]
@@ -53,7 +54,7 @@ Status: draft
 \`\`\`
 **Done when:** [specific, testable criterion]
 
-### Task 2 — [Title]
+### Task 2 — [Title] [large] [model: opus]
 ...
 
 ## Out of scope
@@ -63,11 +64,23 @@ Status: draft
 [What kinds of tests will be written — unit, integration, etc.]
 ```
 
-### Step 3 — Complexity estimate
+### Step 3 — Complexity estimate and model assignment
 For each task, add one of: `[small]` `[medium]` `[large]`
-- Small: 1 file, <50 lines, well-understood
-- Medium: 2–4 files, some design decisions
-- Large: many files, significant refactoring, or unknown territory
+- Small: 1 file, <50 lines, well-understood → **haiku**
+- Medium: 2–4 files, some design decisions → **sonnet**
+- Large: many files, significant refactoring, or unknown territory → **opus**
+
+Escalation signals (override the default mapping):
+- Task has `[risk: ...]` flag → at least **sonnet**
+- Task touches public API or shared interfaces → at least **sonnet**
+- Task requires understanding complex business logic → **opus**
+
+### Step 3b — Assign plan-level default model
+After tagging all tasks:
+1. Count the model assigned to each task (from the mapping in Step 3)
+2. The model that covers the **majority** of tasks becomes the plan default — set it in the `Model:` header
+3. Only annotate tasks that **differ** from the default with `[model: <x>]` in the task title
+4. Tasks matching the default need no `[model:]` annotation
 
 ### Step 4 — Review gate
 Present the plan to the user. Ask:

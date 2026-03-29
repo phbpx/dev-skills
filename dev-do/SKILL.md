@@ -23,6 +23,7 @@ Read the plan file. Confirm:
 - Status is `approved` (not `draft`)
 - All tasks have "done when" criteria
 - No obvious blockers (missing dependencies, unclear requirements)
+- Read the `Model:` header if present — this is the default model for all tasks
 
 If the plan is incomplete or still a draft, stop and ask the user to review it first.
 
@@ -41,6 +42,14 @@ Which? (A/B)
 Wait for the answer.
 
 ### Step 3 — Execute
+
+**Model routing:**
+For each task, determine the model to use:
+1. If the task has `[model: <x>]` annotation → use that model
+2. Otherwise → use the plan's `Model:` header
+3. If no `Model:` header exists → use the current model (backward compatible)
+
+When dispatching sub-agents, pass the `model` parameter: `model: "<resolved model>"`
 
 **Mode A (task by task):**
 For each task:
@@ -66,7 +75,17 @@ After each task, verify the "done when" criterion from the plan:
 After all tasks are done:
 1. Run the full test suite one final time
 2. Update the plan status to `completed`
-3. Suggest next steps: `/dev-review`, `/dev-commit`, `/dev-pr`, or follow-up work
+3. Present the execution summary:
+```
+| Task | Status | Model | Notes |
+|------|--------|-------|-------|
+| Task 1 — [title] | done | haiku | — |
+| Task 2 — [title] | done | opus | — |
+| ...  | ...    | ...   | ...   |
+
+Default model: [x] | Overrides: [N] task(s)
+```
+4. Suggest next steps: `/dev-review`, `/dev-commit`, `/dev-pr`, or follow-up work
 
 ## Rules
 
